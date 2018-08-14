@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/xml/camera_preferences.xml",
+        "source": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/src/main/res/xml/camera_preferences.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/xml/preferences.xml",
+        "source": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/src/main/res/xml/preferences.xml"
+    }
+]

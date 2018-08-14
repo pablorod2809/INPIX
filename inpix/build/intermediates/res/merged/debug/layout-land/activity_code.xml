@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".activities.MainActivity"
+    android:id="@+id/lytCode"
+    android:background="#F39200">
+
+
+<!--    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frameLayout3"
+        android:layout_centerHorizontal="false"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
+-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="274dp"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout2"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="117dp"
+                android:layout_height="100dp"
+                android:id="@+id/lovebtn"
+                android:src="@drawable/logo_pantalla"
+                android:layout_marginLeft="25dp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/linearLayout2">
+
+                <TextView
+                    android:id="@+id/lblUserName"
+                    android:layout_width="271dp"
+                    android:layout_height="30dp"
+                    android:layout_above="@+id/frameLayout"
+                    android:layout_alignLeft="@+id/frameLayout"
+                    android:layout_alignStart="@+id/frameLayout"
+                    android:layout_gravity="center_horizontal|left"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_weight="1"
+                    android:gravity="left|top"
+                    android:text="@string/acceso_al_evento"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="26dp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/lblCode"
+                    android:layout_width="250dp"
+                    android:layout_height="117dp"
+                    android:layout_above="@+id/frameLayout"
+                    android:layout_alignLeft="@+id/frameLayout"
+                    android:layout_alignStart="@+id/frameLayout"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="25dp"
+                    android:layout_weight="0.67"
+                    android:gravity="bottom"
+                    android:paddingLeft="20dp"
+                    android:text="@string/codigo_organizador"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="24dp" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/frameLayout"
+            android:layout_gravity="bottom">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:id="@+id/txtCode"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal|top"
+                android:background="@drawable/btn_round_withe"
+                android:textColor="#ff000000"
+                android:inputType="textPersonName"
+                android:textSize="30dp"
+                android:maxLength="14"
+                android:maxLines="1"
+                android:ellipsize="middle"
+                android:gravity="left"
+                android:padding="10dp" />
+
+            <Button
+                android:id="@+id/button_registercode"
+                style="@style/button_textmax.red"
+                android:layout_height="63dp"
+                android:layout_gravity="right|bottom"
+                android:background="@drawable/btn_round_black"
+                android:ellipsize="middle"
+                android:gravity="left|fill_vertical"
+                android:paddingLeft="20dp"
+                android:text="@string/entra_al_evento"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+        </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>

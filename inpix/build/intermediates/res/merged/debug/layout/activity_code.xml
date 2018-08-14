@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".activities.MainActivity"
+    android:id="@+id/lytCode"
+    android:background="#F39200">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:id="@+id/linearLayout2"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="117dp"
+            android:layout_height="match_parent"
+            android:id="@+id/lovebtn"
+            android:src="@drawable/logo_pantalla"
+            android:layout_margin="20dp"
+            android:scaleType="centerInside"
+            android:layout_weight="0.09" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/linearLayout2"
+        android:id="@+id/frameLayout3">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/acceso_al_evento"
+            android:id="@+id/lblUserName"
+            android:layout_weight="1"
+            android:gravity="left|top"
+            android:layout_gravity="center_horizontal|left"
+            android:textSize="26dp"
+            android:layout_above="@+id/frameLayout"
+            android:layout_alignLeft="@+id/frameLayout"
+            android:layout_alignStart="@+id/frameLayout"
+            android:textStyle="bold"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/frameLayout">
+
+        <Button
+            android:text="@string/entra_al_evento"
+            android:id="@+id/button_registercode"
+            style="@style/button_textmax.red"
+            android:layout_gravity="right|bottom"
+            android:layout_height="63dp"
+            android:background="@drawable/btn_round_black"
+            android:ellipsize="middle"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            android:gravity="left|fill_vertical"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/codigo_organizador"
+            android:id="@+id/lblCode"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:layout_gravity="left|top"
+            android:textSize="24dp"
+            android:layout_above="@+id/frameLayout"
+            android:layout_alignLeft="@+id/frameLayout"
+            android:layout_alignStart="@+id/frameLayout" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:id="@+id/txtCode"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_round_withe"
+            android:textColor="#ff000000"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="30dp"
+            android:maxLength="14"
+            android:maxLines="1"
+            android:ellipsize="middle"
+            android:gravity="left"
+            android:paddingTop="10dp"
+            android:inputType="textPersonName" />
+
+    </FrameLayout>
+
+</RelativeLayout>

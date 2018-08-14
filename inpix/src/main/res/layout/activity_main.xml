@@ -1,0 +1,154 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical|center_horizontal"
+    tools:context=".activities.MainActivity"
+    android:clickable="false"
+    android:background="#9163A6">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:id="@+id/linearLayout"
+        android:weightSum="1">
+
+        <FrameLayout
+            android:layout_width="174dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="136dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView2"
+                android:src="@drawable/logo_pantalla"
+                android:layout_weight="0.08"
+                android:layout_marginLeft="25dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:foregroundGravity="right">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnMenu"
+                android:layout_gravity="right|center_vertical"
+                android:src="@drawable/btn_menu"
+                android:background="#00961a37"
+                android:clickable="true"
+                android:scaleType="centerInside"
+                android:layout_marginRight="20dp" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="130dp"
+        android:id="@+id/lytLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp">
+
+        <Button
+           android:id="@+id/button_takephoto"
+            android:layout_width="match_parent"
+           android:layout_height="63dp"
+           android:layout_marginBottom="2dp"
+            android:text="@string/take_photo"
+            android:clickable="true"
+            android:enabled="true"
+            android:background="@drawable/btn_round_black"
+            android:textColor="#ffffffff"
+            android:textSize="24dp"
+            android:layout_gravity="top"
+            android:fontFamily="Roboto"
+            android:focusable="false"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="15dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_changeevt"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="@drawable/btn_round_withe"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="15dp"
+            android:text="@string/button_change_event"
+            android:textColor="#9163A6"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_below="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/lbl_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/message"
+            android:background="#ffffffff"
+            android:gravity="bottom"
+            android:paddingLeft="25dp"
+            android:text="@string/label_welcome"
+            android:textColor="#9163A6"
+            android:textSize="26dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:text="Nombre del evento"
+            android:id="@+id/message"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#ffffffff"
+            android:gravity="left"
+            android:textColor="#9163A6"
+            android:paddingLeft="25dp"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/yourPictures"
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal|top"
+            android:background="#ffffffff"
+            android:gravity="left"
+            android:paddingLeft="25dp"
+            android:text="your pictures in http:\\india.inpix.online"
+            android:textColor="#9163A6"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

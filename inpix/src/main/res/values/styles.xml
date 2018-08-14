@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Camera -->
+	<style name="OnScreenHintTextAppearance">
+        <item name="android:textColor">@android:color/primary_text_dark</item>
+        <item name="android:textColorHighlight">#FFFF9200</item>
+        <item name="android:textColorHint">#808080</item>
+        <item name="android:textColorLink">#5C5CFF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="OnScreenHintTextAppearance.Small">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@android:color/secondary_text_dark</item>
+    </style>
+    <style name="Animation_OnScreenHint">
+        <item name="android:windowEnterAnimation">@anim/on_screen_hint_enter</item>
+        <item name="android:windowExitAnimation">@anim/on_screen_hint_exit</item>
+    </style>
+    <style name="ReviewControlText">
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ReviewControlGroup">
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">top|center_horizontal</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+    <style name="button_text" >
+	    <item name="android:layout_width" >fill_parent</item>
+	    <item name="android:layout_height" >wrap_content</item>
+	    <item name="android:textColor" >#ffffff</item>
+	    <item name="android:gravity" >center</item>
+	    <item name="android:layout_margin" >10dp</item>
+	    <item name="android:textSize" >20sp</item>
+	    <item name="android:textStyle" >bold</item>
+	  </style>
+
+      <style name="button_textmax" >
+	    <item name="android:layout_width" >fill_parent</item>
+	    <item name="android:layout_height" >wrap_content</item>
+	    <item name="android:textColor" >#ffffff</item>
+	    <item name="android:gravity" >center</item>
+	    <item name="android:layout_margin" >10dp</item>
+	    <item name="android:textSize" >30sp</item>
+	    <item name="android:textStyle" >bold</item>
+	  </style>
+
+      <style name="button_textmin" >
+	    <item name="android:layout_width" >fill_parent</item>
+	    <item name="android:layout_height" >wrap_content</item>
+	    <item name="android:textColor" >#ffffff</item>
+	    <item name="android:layout_margin" >2dp</item>
+	    <item name="android:textSize" >10sp</item>
+	    <item name="android:gravity">left|center</item>
+	  </style>
+
+    <style name="button_textmax.red">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">67dp</item>
+        <item name="android:layout_gravity">center_horizontal|bottom</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:theme">@style/button_textmax</item>
+        <item name="android:background">#ff1f9658</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:enabled">true</item>
+        <item name="android:textColor">#fffffbfb</item>
+        <item name="android:bottomLeftRadius">10dp</item>
+        <item name="android:bottomRightRadius">10dp</item>
+        <item name="android:topLeftRadius">10dp</item>
+        <item name="android:topRightRadius">10dp</item>
+    </style>
+
+    <style name="button_textmax.black2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_gravity">center_horizontal|bottom</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:theme">@style/button_textmax</item>
+        <item name="android:background">#000000</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:enabled">true</item>
+        <item name="android:textColor">#fffffbfb</item>
+        <item name="android:bottomLeftRadius">10dp</item>
+        <item name="android:bottomRightRadius">10dp</item>
+        <item name="android:topLeftRadius">10dp</item>
+        <item name="android:topRightRadius">10dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="button_textmax.g">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">67dp</item>
+        <item name="android:layout_gravity">center_horizontal|bottom</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:theme">@style/button_textmax</item>
+        <item name="android:background">#ff1f9658</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:enabled">true</item>
+        <item name="android:textColor">#fffffbfb</item>
+        <item name="android:bottomLeftRadius">10dp</item>
+        <item name="android:bottomRightRadius">10dp</item>
+        <item name="android:topLeftRadius">10dp</item>
+        <item name="android:topRightRadius">10dp</item>
+    </style>
+
+    <style name="button_textmax.r">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">67dp</item>
+        <item name="android:layout_gravity">center_horizontal|bottom</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:theme">@style/button_textmax</item>
+        <item name="android:background">#ff961a37</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:enabled">true</item>
+        <item name="android:textColor">#fffffbfb</item>
+        <item name="android:bottomLeftRadius">10dp</item>
+        <item name="android:bottomRightRadius">10dp</item>
+        <item name="android:topLeftRadius">10dp</item>
+        <item name="android:topRightRadius">10dp</item>
+
+    </style>
+
+    <style name="background1">
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="android:Theme.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">@style/ButtonBar</item>
+        <item name="metaButtonBarButtonStyle">@style/ButtonBarButton</item>
+    </style>
+
+    <!-- Backward-compatible version of ?android:attr/buttonBarStyle -->
+    <style name="ButtonBar">
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:background">@android:drawable/bottom_bar</item>
+    </style>
+
+    <!-- Backward-compatible version of ?android:attr/buttonBarButtonStyle -->
+    <style name="ButtonBarButton" />
+
+    <style name="borderless" parent="android:Widget.DeviceDefault.Button.Borderless">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="AppFullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:textColorPrimary">@color/cardview_light_background</item>
+        <item name="android:textColorSecondary">@color/secondary_text_material_light</item>
+        <item name="colorPrimary">@android:color/holo_red_light</item>
+    </style>
+
+    <style name="CustomBtn" parent="@style/Widget.Design.FloatingActionButton">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#008</item>
+    </style>
+
+    <style name="Widget.Design.FloatingActionButton2" parent="Widget.Design.FloatingActionButton">
+        <item name="android:backgroundTint">@android:color/holo_red_light</item>
+    </style>
+
+    <style name="borderlessRound" parent="borderless">
+        <item name="android:bottomLeftRadius">10dp</item>
+        <item name="android:bottomRightRadius">10dp</item>
+        <item name="android:topLeftRadius">10dp</item>
+        <item name="android:topRightRadius">10dp</item>
+
+    </style>
+
+    <!-- Edicion de imagenes-->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.Fullscreen">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:actionMenuTextColor">@color/color_option_menu</item>
+    </style>
+
+</resources>
+

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/drawable-ldpi/logo_pantalla.png",
+        "source": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/src/main/res/drawable-ldpi/logo_pantalla.png"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/drawable-ldpi/ic_launcher_quickcam.png",
+        "source": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/src/main/res/drawable-ldpi/ic_launcher_quickcam.png"
+    }
+]

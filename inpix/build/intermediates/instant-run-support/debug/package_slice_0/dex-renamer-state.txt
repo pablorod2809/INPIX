@@ -1,0 +1,4 @@
+#Sat Aug 11 20:45:15 ART 2018
+base.0=/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0
+renamed.0=classes.dex
+file.0=/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex

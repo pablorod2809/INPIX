@@ -1,0 +1,82 @@
+[
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/on_screen_hint_enter.xml",
+        "source": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/src/main/res/anim/on_screen_hint_enter.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/fb442571fde9bf94b6b5d6523cd8d7bfd8430029/output/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/spash_logo.xml",
+        "source": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/src/main/res/anim/spash_logo.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/on_screen_hint_exit.xml",
+        "source": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/src/main/res/anim/on_screen_hint_exit.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/fb442571fde9bf94b6b5d6523cd8d7bfd8430029/output/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/fb442571fde9bf94b6b5d6523cd8d7bfd8430029/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/1d7dccbf56d109b8b8a204757a9ba6916585f544/output/res/anim/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/1d7dccbf56d109b8b8a204757a9ba6916585f544/output/res/anim/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/fb442571fde9bf94b6b5d6523cd8d7bfd8430029/output/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/tooltip_exit.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/fb442571fde9bf94b6b5d6523cd8d7bfd8430029/output/res/anim/tooltip_exit.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/fb442571fde9bf94b6b5d6523cd8d7bfd8430029/output/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/tooltip_enter.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/fb442571fde9bf94b6b5d6523cd8d7bfd8430029/output/res/anim/tooltip_enter.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/fb442571fde9bf94b6b5d6523cd8d7bfd8430029/output/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/text_rotate.xml",
+        "source": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/src/main/res/anim/text_rotate.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/1d7dccbf56d109b8b8a204757a9ba6916585f544/output/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/fb442571fde9bf94b6b5d6523cd8d7bfd8430029/output/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/fb442571fde9bf94b6b5d6523cd8d7bfd8430029/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/fb442571fde9bf94b6b5d6523cd8d7bfd8430029/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/1d7dccbf56d109b8b8a204757a9ba6916585f544/output/res/anim/design_snackbar_in.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/fb442571fde9bf94b6b5d6523cd8d7bfd8430029/output/res/anim/abc_fade_out.xml"
+    }
+]

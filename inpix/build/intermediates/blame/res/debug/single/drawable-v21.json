@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/ab20f6661310abfbfda59485147374f9a1fc67ad/output/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/drawable-v21/design_password_eye.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/1d7dccbf56d109b8b8a204757a9ba6916585f544/output/res/drawable-v21/design_password_eye.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/drawable-v21/avd_hide_password.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/1d7dccbf56d109b8b8a204757a9ba6916585f544/output/res/drawable-v21/avd_hide_password.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/drawable-v21/avd_show_password.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/1d7dccbf56d109b8b8a204757a9ba6916585f544/output/res/drawable-v21/avd_show_password.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/drawable-v21/dmax_spots_spot.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/48bc40544058a00f9a6fb0a83300c271bfd2d4a0/output/res/drawable-v21/dmax_spots_spot.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/fb442571fde9bf94b6b5d6523cd8d7bfd8430029/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/fb442571fde9bf94b6b5d6523cd8d7bfd8430029/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/1d7dccbf56d109b8b8a204757a9ba6916585f544/output/res/drawable-v21/design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/pablorodriguez/.android/build-cache/fb442571fde9bf94b6b5d6523cd8d7bfd8430029/output/res/drawable-v21/abc_edit_text_material.xml"
+    }
+]

@@ -1,0 +1,162 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".activities.MainActivity"
+    android:id="@+id/lytCode"
+    android:background="#00A09A">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:id="@+id/linearLayout2"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/lovebtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="0.81"
+            android:scaleType="centerInside"
+            android:src="@drawable/logo_pantalla" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:paddingLeft="20dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/frameLayout"
+                    android:layout_alignLeft="@+id/frameLayout"
+                    android:layout_alignStart="@+id/frameLayout"
+                    android:layout_gravity="left|bottom"
+                    android:gravity="center_vertical"
+                    android:text="pablorod2809@gmail.com"
+                    android:textAppearance="@android:style/TextAppearance.Large"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/frameLayout"
+                    android:layout_alignLeft="@+id/frameLayout"
+                    android:layout_alignStart="@+id/frameLayout"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.35"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/contactanos"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="18sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/lytGrid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp">
+
+                    <TextView
+                        android:id="@+id/lblSerial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/frameLayout"
+                        android:layout_alignLeft="@+id/frameLayout"
+                        android:layout_alignStart="@+id/frameLayout"
+                        android:gravity="center_vertical"
+                        android:text="Driver: Gingerbread"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#ff2f2b96"
+                        android:textSize="14dp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/lblBrand"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/frameLayout"
+                        android:layout_alignLeft="@+id/frameLayout"
+                        android:layout_alignStart="@+id/frameLayout"
+                        android:gravity="center_vertical"
+                        android:text="Marca: MOTOROLA"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#ffbdd7ca"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/lblDriver"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/frameLayout"
+                        android:layout_alignLeft="@+id/frameLayout"
+                        android:layout_alignStart="@+id/frameLayout"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:text="Driver: Gingerbread"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#ffbdd7ca"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/lblModel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/frameLayout"
+                        android:layout_alignLeft="@+id/frameLayout"
+                        android:layout_alignStart="@+id/frameLayout"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:gravity="center_vertical"
+                        android:text="Modelo: XT1032"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#ffbdd7ca"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/lblVersionName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal|left"
+        android:gravity="top|center"
+        android:text="ver 2.3"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="26dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

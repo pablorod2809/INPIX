@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="your_pics">Your photos ara at</string>
+    <string name="email_invalid" >Invalid email</string>
+    <string name="invite_take_images">We invite you to share or vote images that inspire</string>
+    <string name="invite_take_images_2" >We invite you to share or vote images that show</string>
+</resources>

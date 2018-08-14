@@ -1,0 +1,7 @@
+#Sun Aug 12 12:11:10 ART 2018
+base.0=/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_96d25f28380ffb429fee2d970a0c0e4945760b5d
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_00ef207e5e2201bc7174d83d7d91ea0ccb61b016/classes.dex
+base.1=/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_00ef207e5e2201bc7174d83d7d91ea0ccb61b016
+file.0=/Users/pablorodriguez/AndroidStudioProjects/INPIX/inpix/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_96d25f28380ffb429fee2d970a0c0e4945760b5d/classes.dex

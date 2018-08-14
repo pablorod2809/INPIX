@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/camera"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:background="@android:color/black"
+    android:orientation="horizontal" >
+
+    <com.lightbox.android.inpix.PreviewFrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignRight="@+id/control_bar"
+        android:layout_alignEnd="@+id/control_bar"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentRight="false">
+
+        <FrameLayout
+            android:id="@+id/frame"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+
+            <com.lightbox.android.inpix.FocusRectangle
+                android:id="@+id/focus_rectangle"
+                android:layout_width="228dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </FrameLayout>
+    </com.lightbox.android.inpix.PreviewFrameLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/control_bar"
+        android:layout_toStartOf="@+id/control_bar"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentStart="true">
+
+        <SurfaceView
+            android:id="@+id/camera_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/control_bar"
+        android:layout_width="100dip"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <FrameLayout
+            android:id="@+id/button_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="false"
+            android:layout_centerVertical="true">
+
+            <com.lightbox.android.inpix.ShutterButton
+                android:id="@+id/shutter_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0.5dip"
+                android:background="@drawable/btn_camera_shoot"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="center"
+                android:layout_marginLeft="8dip"
+                android:layout_gravity="center" />
+
+            <ImageView
+                android:id="@+id/imageViewPreview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:scaleType="centerCrop" android:padding="1dp" android:visibility="invisible"
+                android:layout_gravity="bottom|left|top" />
+        </FrameLayout>
+
+        <com.lightbox.android.inpix.RotateImageView
+            android:id="@+id/review_thumbnail"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dip"
+            android:background="@drawable/border_last_picture"
+            android:clickable="false"
+            android:focusable="false" android:layout_centerHorizontal="true"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/controls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="8dip"
+            android:layout_marginRight="24dip"
+            android:background="@drawable/camera_functions_bg"
+            android:orientation="vertical" >
+
+            <com.lightbox.android.inpix.RotateImageView
+                android:id="@+id/btn_flash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dip"
+                android:clickable="true"
+                android:focusable="false"
+                android:src="@drawable/btn_camera_flashauto" />
+
+            <com.lightbox.android.inpix.RotateImageView
+                android:id="@+id/btn_camera_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dip"
+                android:clickable="true"
+                android:focusable="false"
+                android:src="@drawable/btn_camera_rear" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

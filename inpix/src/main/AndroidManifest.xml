@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lightbox.android.inpix"
+    android:installLocation="auto">
+
+    <uses-sdk android:minSdkVersion="15"
+              android:maxSdkVersion="27"
+              tools:overrideLibrary="com.google.android.gms.ads.impl" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+
+    <application
+        android:name="com.lightbox.android.inpix.CameraApplication"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher_quickcam"
+        android:label="@string/app_name" >
+     <!--   <activity
+            android:name="com.lightbox.android.inpix.activities.MainActivity"
+            android:clearTaskOnLaunch="true"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        </activity> -->
+        <activity
+            android:name=".activities.MainListActivity"
+            android:clearTaskOnLaunch="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".activities.CodeActivity"
+            android:clearTaskOnLaunch="true"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name=".activities.UserActivity"
+            android:clearTaskOnLaunch="true"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name=".activities.AboutActivity"
+            android:clearTaskOnLaunch="true"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        </activity>
+       <!-- <activity
+            android:name="com.lightbox.android.inpix.activities.EventActivity"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        </activity> -->
+        <activity
+            android:name=".activities.EventListActivity"
+            android:clearTaskOnLaunch="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".activities.MainDetailActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name=".activities.PresentationActivity"
+            android:clearTaskOnLaunch="true"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name=".activities.MessageActivity"
+            android:clearTaskOnLaunch="true"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name=".activities.MessageActivity2"
+            android:clearTaskOnLaunch="true"
+            android:theme= "@style/AppTheme.NoActionBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.lightbox.android.inpix.activities.Camera"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
+            android:taskAffinity="lightbox.task.camera"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.media.action.IMAGE_CAPTURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.STILL_IMAGE_CAMERA" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- Settings -->
+        <!--<activity
+            android:name=".activities.Settings"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>-->
+        <activity
+            android:name=".activities.splashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
