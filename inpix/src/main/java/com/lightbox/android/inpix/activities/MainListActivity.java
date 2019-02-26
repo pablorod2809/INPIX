@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.support.design.widget.TabItem;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
@@ -17,6 +19,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.lightbox.android.inpix.CameraApplication;
 import com.lightbox.android.inpix.R;
 import com.lightbox.android.inpix.activities.util.InpixImageAdapter;
@@ -45,15 +49,14 @@ public class MainListActivity extends AppCompatActivity implements View.OnClickL
     private GridView grid;
     private ImageButton btnPhoto;
     private ImageButton btnBack;
-    private ImageButton btnRanking;
-    private ImageButton btnOwn;
-    private ImageButton btnClock;
+
+    private TabLayout tabs;
     private ArrayList<rankingResponse.imageRankValue> listImages;
     private InpixImageAdapter ipxAdapter;
     private TextView mainTitle;
 
     private static final String TAG = "INPIX-mainListActivity";
-    private final String BASE = "https://inpix.online/private/";
+    //private final String BASE = "https://inpix.online/private/";
     private String event;
     private String user;
     private int lastPage = 0;
@@ -84,12 +87,6 @@ public class MainListActivity extends AppCompatActivity implements View.OnClickL
 
         //Actualizo fuente para texto de pantalla
         application = (CameraApplication) getApplication();
-        TextView twMyPics = (TextView) findViewById(R.id.twMine);
-        TextView twMyRank = (TextView) findViewById(R.id.twRank);
-        TextView twMyLast = (TextView) findViewById(R.id.twLast);
-        application.setTypeface(twMyLast);
-        application.setTypeface(twMyRank);
-        application.setTypeface(twMyPics);
 
         //Seteo Titulo
         mainTitle = (TextView) findViewById(R.id.txtView);
@@ -98,21 +95,60 @@ public class MainListActivity extends AppCompatActivity implements View.OnClickL
         //Listeners de Botones
         btnBack = (ImageButton) findViewById(R.id.btnBack);
         btnPhoto = (ImageButton) findViewById(R.id.btnAddPhoto);
-        btnRanking = (ImageButton) findViewById(R.id.btnRanking);
-        btnOwn = (ImageButton) findViewById(R.id.btnOwns);
-        btnClock = (ImageButton) findViewById(R.id.btnClock);
+
+        tabs = (TabLayout) findViewById(R.id.mainActivity_tabs);
 
         btnPhoto.setOnClickListener(this);
         btnBack.setOnClickListener(this);
-        btnRanking.setOnClickListener(this);
-        btnOwn.setOnClickListener(this);
-        btnClock.setOnClickListener(this);
 
+        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                try{
+                    if (tab.getPosition() == 0) {
+                            lastPage = 0;
+                            status = "rank";
+                            mLoading = true;
+                            dialog.show();
+                            Call<rankingResponse> call = InpixApiAdapter.getApiService().ranking(event, Integer.toString(lastPage), user);
+                            call.enqueue(MainListActivity.this);
+                    }else if (tab.getPosition() == 1){
+                            lastPage = 0;
+                            status = "clock";
+                            mLoading = true;
+                            dialog.show();
+                            Call<rankingResponse> call = InpixApiAdapter.getApiService().lastpics(event,Integer.toString(lastPage),user);
+                            call.enqueue(MainListActivity.this);
+                    }else{
+                            lastPage = 0;
+                            status = "own";
+                            mLoading = true;
+                            dialog.show();
+                            Call<rankingResponse> call = InpixApiAdapter.getApiService().mypics(event,Integer.toString(lastPage),user);
+                            call.enqueue(MainListActivity.this);
+                    }
+                } catch (Exception e) {
+                    Log.e(TAG, "onClick: " + this);
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
         //Preparo la Grilla
         grid = (GridView) findViewById(R.id.grid1);
         listImages = new ArrayList<rankingResponse.imageRankValue>();
-        ipxAdapter = new InpixImageAdapter(this, new ArrayList<rankingResponse.imageRankValue>(listImages), BASE + event);
+        ipxAdapter = new InpixImageAdapter(this, new ArrayList<rankingResponse.imageRankValue>(listImages), InpixApiAdapter.baseUrl + event);
         grid.setAdapter(ipxAdapter);
         grid.setOnScrollListener(this);
 
@@ -198,56 +234,6 @@ public class MainListActivity extends AppCompatActivity implements View.OnClickL
                     e.printStackTrace();
                 }
                 break;
-            case R.id.btnRanking:
-                try {
-                    lastPage = 0;
-                    status = "rank";
-                    mLoading = true;
-                    dialog.show();
-                    Call<rankingResponse> call = InpixApiAdapter.getApiService().ranking(event,Integer.toString(lastPage),user);
-                    call.enqueue(MainListActivity.this);
-                    btnOwn.setImageResource(R.drawable.user_grey);
-                    btnRanking.setImageResource(R.drawable.rank_red);
-                    btnClock.setImageResource(R.drawable.clock_grey);
-                } catch (Exception e) {
-                    Log.e(TAG, "onClick: " + this);
-                    e.printStackTrace();
-                }
-                break;
-
-            case R.id.btnOwns:
-                try {
-                    lastPage = 0;
-                    status = "own";
-                    mLoading = true;
-                    dialog.show();
-                    Call<rankingResponse> call = InpixApiAdapter.getApiService().mypics(event,Integer.toString(lastPage),user);
-                    call.enqueue(MainListActivity.this);
-                    btnOwn.setImageResource(R.drawable.user_red);
-                    btnRanking.setImageResource(R.drawable.rank_grey);
-                    btnClock.setImageResource(R.drawable.clock_grey);
-                } catch (Exception e) {
-                    Log.e(TAG, "onClick: " + this);
-                    e.printStackTrace();
-                }
-                break;
-
-            case R.id.btnClock:
-                try {
-                    lastPage = 0;
-                    status = "clock";
-                    mLoading = true;
-                    dialog.show();
-                    Call<rankingResponse> call = InpixApiAdapter.getApiService().lastpics(event,Integer.toString(lastPage),user);
-                    call.enqueue(MainListActivity.this);
-                    btnOwn.setImageResource(R.drawable.user_grey);
-                    btnRanking.setImageResource(R.drawable.rank_grey);
-                    btnClock.setImageResource(R.drawable.clock_red);
-                } catch (Exception e) {
-                    Log.e(TAG, "onClick: " + this);
-                    e.printStackTrace();
-                }
-                break;
         }
     };
 
@@ -315,7 +301,6 @@ public class MainListActivity extends AppCompatActivity implements View.OnClickL
     public void onScrollStateChanged(AbsListView absListView, int i) {
 
     }
-
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
         if (firstVisibleItem+visibleItemCount == totalItemCount && !mLoading && totalItemCount>0){

@@ -149,7 +149,7 @@ public class CodeActivity extends Activity implements OnClickListener, Callback<
 			this.setPrefs("opEvtDesc", "NADA");
 			this.setPrefs("opEvtFrom","");
 			this.setPrefs("opEvtTo","");
-			Toast tst = Toast.makeText(CodeActivity.this, "Este código es invalido"+'\n'+"por favor vuleva a intentarlo", Toast.LENGTH_LONG);
+			Toast tst = Toast.makeText(CodeActivity.this, getString(R.string.invalid_code), Toast.LENGTH_LONG);
 			tst.setGravity(Gravity.CENTER|Gravity.CENTER,0,0);
 			tst.show();
 			this.txtCode.setText(null);

@@ -81,7 +81,7 @@
     <string name="message_india">India</string>
     <string name="activities_about_version">Versión</string>
     <string name="activities_main_share"><![CDATA[Compartir >]]></string>
-    <string name="activities_main_cancel"><![CDATA[< Cancelar]]></string>
+    <string name="activities_main_cancel"><![CDATA[< Cancela]]></string>
     <string name="activities_main_sure">¿Estás seguro?</string>
     <string name="activities_main_yes">si</string>
     <string name="activities_main_no">no</string>
@@ -108,4 +108,10 @@
     <string name="filters">FILTROS</string>
     <string name="filter_normal">Normal</string>
     <string name="edit">EDITAR</string>
+    <string name="action_open">ABRIR</string>
+    <string name="action_save">GUARDAR</string>
+    <string name="hello_blank_fragment">Hola</string>
+    <string name="invalid_code">Este código es inválido</string>
+    <string name="activities_user_new_error">error al crear el usuario</string>
+    <string name="back"><![CDATA[<]]></string>
 </resources>

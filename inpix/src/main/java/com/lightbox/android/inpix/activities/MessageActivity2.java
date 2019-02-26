@@ -4,14 +4,15 @@ package com.lightbox.android.inpix.activities;
  * Created by pablorodriguez on 11/8/18.
  */
 
-import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -19,28 +20,23 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.karumi.dexter.Dexter;
-import com.karumi.dexter.MultiplePermissionsReport;
-import com.karumi.dexter.PermissionToken;
-import com.karumi.dexter.listener.PermissionRequest;
-import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.lightbox.android.inpix.EditImages.EditImageFragment;
 import com.lightbox.android.inpix.EditImages.FiltersListFragment;
 import com.lightbox.android.inpix.R;
+import com.lightbox.android.inpix.Util;
+import com.lightbox.android.inpix.util.WSManager;
 import com.zomato.photofilters.imageprocessors.Filter;
 import com.zomato.photofilters.imageprocessors.subfilters.BrightnessSubFilter;
 import com.zomato.photofilters.imageprocessors.subfilters.ContrastSubFilter;
 import com.zomato.photofilters.imageprocessors.subfilters.SaturationSubfilter;
 
-import java.io.Console;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -94,21 +90,25 @@ public class MessageActivity2 extends AppCompatActivity implements FiltersListFr
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_activity_main);
         ButterKnife.bind(this);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(getString(R.string.activities_main_cancel));
+
+
+        //getSupportActionBar().setTitle(getString(R.string.activities_main_cancel));
         Bundle bundle = getIntent().getExtras();
         String pathImge = bundle.getString("pathImage");
-        Log.i(TAG,"onCreate1: " + pathImge);
+        //Log.i(TAG,"onCreate1: " + pathImge);
         loadImage(pathImge);
-        Log.i(TAG,"onCreate2: " + pathImge);
+        //Log.i(TAG,"onCreate2: " + pathImge);
         setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
-        Log.i(TAG,"onCreate3: " + pathImge);
+        //Log.i(TAG,"onCreate3: " + pathImge);
 
     }
 
@@ -198,6 +198,8 @@ public class MessageActivity2 extends AppCompatActivity implements FiltersListFr
         contrastFinal = 1.0f;
     }
 
+    //CAmbios
+
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
@@ -262,13 +264,18 @@ public class MessageActivity2 extends AppCompatActivity implements FiltersListFr
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_open) {
-            openImageFromGallery();
+        if (id == R.id.action_rotate) {
+             try {
+				 finalImage = Util.rotate(finalImage, 270);
+                 imagePreview.setImageBitmap(finalImage);
+			  } catch (Exception e) {
+					e.printStackTrace();
+			  }
             return true;
         }
 
         if (id == R.id.action_save) {
-            saveImageToGallery();
+            shareImagesToWall();
             return true;
         }
 
@@ -296,72 +303,126 @@ public class MessageActivity2 extends AppCompatActivity implements FiltersListFr
         }
     }
 
-    private void openImageFromGallery() {
-        Dexter.withActivity(this).withPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .withListener(new MultiplePermissionsListener() {
-                    @Override
-                    public void onPermissionsChecked(MultiplePermissionsReport report) {
-                        if (report.areAllPermissionsGranted()) {
-                            Intent intent = new Intent(Intent.ACTION_PICK);
-                            intent.setType("image/*");
-                            startActivityForResult(intent, SELECT_GALLERY_IMAGE);
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Permissions are not granted!", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
-                        token.continuePermissionRequest();
-                    }
-                }).check();
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
-    /*
-    * saves image to camera gallery
-    * */
-    private void saveImageToGallery() {
-        Dexter.withActivity(this).withPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .withListener(new MultiplePermissionsListener() {
-                    @Override
-                    public void onPermissionsChecked(MultiplePermissionsReport report) {
-                        if (report.areAllPermissionsGranted()) {
-                            final String path = BitmapUtils.insertImage(getContentResolver(), finalImage, System.currentTimeMillis() + "_profile.jpg", null);
-                            if (!TextUtils.isEmpty(path)) {
-                                Snackbar snackbar = Snackbar
-                                        .make(coordinatorLayout, "Image saved to gallery!", Snackbar.LENGTH_LONG)
-                                        .setAction("OPEN", new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View view) {
-                                                openImage(path);
-                                            }
-                                        });
+    /* Compartir imagenes al muro */
+    private void shareImagesToWall(){
+        try {
+            new UploadImage(this).execute(finalImage);
+            this.finish();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-                                snackbar.show();
-                            } else {
-                                Snackbar snackbar = Snackbar
-                                        .make(coordinatorLayout, "Unable to save image!", Snackbar.LENGTH_LONG);
+    private class UploadImage extends AsyncTask<Bitmap, Void, Void> {
+        private Context cnt;
 
-                                snackbar.show();
-                            }
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Permissions are not granted!", Toast.LENGTH_SHORT).show();
-                        }
-                    }
+        UploadImage(Context pCnt){
+            Log.i("debugPOV", "UploadTask.Constructor");
+            cnt = pCnt;
+        }
 
-                    @Override
-                    public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
-                        token.continuePermissionRequest();
-                    }
-                }).check();
+        protected Void doInBackground(Bitmap... bitmaps) {
+            if (bitmaps[0] == null){
+                return null;
+            }
+            setProgress(0);
+            Log.i("debugPOV", "UploadTask.doInBackground");
+            SharedPreferences pref = getSharedPreferences("mypreferences",Context.MODE_PRIVATE);
+            String vCode = pref.getString("opCode", "NADA");
 
+            WSManager wsManager = new WSManager(cnt);
+            wsManager.addImage(vCode,"no message",0,bitmaps);
+
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            Toast tst = Toast.makeText(MessageActivity2.this, R.string.activities_main_img_shared, Toast.LENGTH_LONG);
+            tst.setGravity(Gravity.CENTER|Gravity.CENTER,0,0);
+            tst.show();
+
+        }
     }
 
     // opening image in default image viewer app
-    private void openImage(String path) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.setDataAndType(Uri.parse(path), "image/*");
-        startActivity(intent);
-    }
+
+    /*
+        private void openImage(String path) {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.setDataAndType(Uri.parse(path), "image/*");
+            startActivity(intent);
+        }
+
+        private void openImageFromGallery() {
+            Dexter.withActivity(this).withPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    .withListener(new MultiplePermissionsListener() {
+                        @Override
+                        public void onPermissionsChecked(MultiplePermissionsReport report) {
+                            if (report.areAllPermissionsGranted()) {
+                                Intent intent = new Intent(Intent.ACTION_PICK);
+                                intent.setType("image/*");
+                                startActivityForResult(intent, SELECT_GALLERY_IMAGE);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Permissions are not granted!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
+                            token.continuePermissionRequest();
+                        }
+                    }).check();
+        }
+
+        private void saveImageToGallery() {
+            Dexter.withActivity(this).withPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    .withListener(new MultiplePermissionsListener() {
+                        @Override
+                        public void onPermissionsChecked(MultiplePermissionsReport report) {
+                            if (report.areAllPermissionsGranted()) {
+                                final String path = BitmapUtils.insertImage(getContentResolver(), finalImage, System.currentTimeMillis() + "_profile.jpg", null);
+                                if (!TextUtils.isEmpty(path)) {
+                                    Snackbar snackbar = Snackbar
+                                            .make(coordinatorLayout, "Image saved to gallery!", Snackbar.LENGTH_LONG)
+                                            .setAction("OPEN", new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View view) {
+                                                    openImage(path);
+                                                }
+                                            });
+
+                                    snackbar.show();
+                                } else {
+                                    Snackbar snackbar = Snackbar
+                                            .make(coordinatorLayout, "Unable to save image!", Snackbar.LENGTH_LONG);
+
+                                    snackbar.show();
+                                }
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Permissions are not granted!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
+                            token.continuePermissionRequest();
+                        }
+                    }).check();
+
+        }
+    */
 }

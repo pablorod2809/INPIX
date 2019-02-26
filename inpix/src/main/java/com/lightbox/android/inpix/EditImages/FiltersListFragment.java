@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lightbox.android.inpix.R;
-import com.lightbox.android.inpix.activities.MessageActivity;
 import com.lightbox.android.inpix.activities.MessageActivity2;
 import com.zomato.photofilters.FilterPack;
 import com.zomato.photofilters.imageprocessors.Filter;
@@ -21,14 +20,10 @@ import com.zomato.photofilters.utils.ThumbnailItem;
 import com.zomato.photofilters.utils.ThumbnailsManager;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import com.lightbox.android.inpix.EditImages.BitmapUtils;
-import com.lightbox.android.inpix.EditImages.SpacesItemDecoration;
 
 
 public class FiltersListFragment extends Fragment implements ThumbsnailsAdapter.ThumbnailsAdapterListener {

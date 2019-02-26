@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.lightbox.android.inpix.activities.MessageActivity2">
     <item
-        android:id="@+id/action_open"
-        android:orderInCategory="100"
-        android:title="@string/action_open"
-        app:showAsAction="always" />
-
+        android:id="@+id/action_rotate"
+        android:icon="@drawable/rota2"
+        android:orderInCategory="101"
+        app:showAsAction="ifRoom"
+        tools:ignore="MenuTitle" />
     <item
         android:id="@+id/action_save"
-        android:orderInCategory="101"
-        android:title="@string/action_save"
+        android:orderInCategory="102"
+        android:title="@string/activities_main_share"
         app:showAsAction="ifRoom" />
+
 </menu>

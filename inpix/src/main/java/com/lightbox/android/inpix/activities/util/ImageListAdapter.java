@@ -44,8 +44,8 @@ public class ImageListAdapter extends BaseAdapter {
         String url = getItem(position);
         //Picasso.get().load(url).resize(100, 100).centerCrop().into(view);
         Picasso.get().load(url) //
-                .placeholder(R.drawable.loader) //
-                .error(R.drawable.loader) //
+                .placeholder(R.drawable.smiley) //
+                .error(R.drawable.smiley) //
                 .fit() //
                 .centerCrop()
                 .tag(this.ctx) //

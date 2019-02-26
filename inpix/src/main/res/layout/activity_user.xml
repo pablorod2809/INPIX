@@ -1,25 +1,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lytCode"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E84E1B"
+    android:elevation="24dp"
     android:gravity="center_horizontal"
-    tools:context=".activities.MainActivity"
-    android:id="@+id/lytCode"
-    android:background="#E84E1B">
+    tools:context=".activities.MainActivity">
 
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:id="@+id/linearLayout4">
+        android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="171dp"
             android:layout_height="match_parent"
-            android:id="@+id/imageView"
-            android:src="@drawable/logo_pantalla"
-            android:layout_margin="20dp" />
+            android:layout_margin="20dp"
+            android:src="@drawable/logo_pantalla" />
     </LinearLayout>
 
     <LinearLayout

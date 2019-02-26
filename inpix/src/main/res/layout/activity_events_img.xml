@@ -20,7 +20,7 @@
     <RelativeLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="false"
         android:layout_alignParentLeft="false"
         android:layout_alignParentStart="false"
@@ -34,50 +34,87 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
-            android:background="@android:color/holo_red_light"
+            android:background="@color/inpix"
             tools:ignore="UselessParent">
 
             <TextView
-                android:id="@+id/txtView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/textSearch"
+                android:layout_width="219dp"
+                android:layout_height="36dp"
+                android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_round_withe"
+                android:clickable="true"
+                android:cursorVisible="true"
+                android:editable="true"
+                android:enabled="true"
+                android:focusableInTouchMode="true"
+                android:gravity="left|center_vertical"
+                android:hint="Qué buscas ?"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp"
+                android:textColor="@color/filter_label_normal"
+                android:textSize="18sp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/btnSearch"
+                android:layout_width="30dp"
+                android:layout_height="36dp"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentLeft="false"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/imgLogo"
-                android:layout_toStartOf="@+id/lblMainTitle"
-                android:gravity="center"
+                android:layout_alignParentTop="false"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_circle_green"
+                android:padding="6dp"
+                app:srcCompat="@drawable/search" />
+
+            <TextView
+                android:id="@+id/txtView"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imgLogo"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/imgLogo"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                android:layout_toEndOf="@+id/imgLogo"
+                android:layout_toRightOf="@+id/imgLogo"
+                android:gravity="right|center"
+                android:paddingRight="10dp"
                 android:text="@string/our_life_in_pictures"
                 android:textColor="@android:color/background_light"
                 android:textSize="16sp"
-                tools:ignore="UnknownId"
-                android:layout_toLeftOf="@+id/lblMainTitle" />
+                android:visibility="invisible"
+                tools:ignore="UnknownId" />
 
             <ImageView
                 android:id="@+id/imgLogo"
                 style="@style/Base.Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_alignParentTop="true"
-                android:layout_gravity="center_vertical|center_horizontal|center"
+                android:layout_width="80dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="left|center_vertical"
+                android:layout_toEndOf="@+id/btnBack"
+                android:layout_toRightOf="@+id/btnBack"
                 android:contentDescription="@string/img"
-                android:padding="8dp"
-                android:paddingBottom="5dp"
+                android:padding="0dp"
+                android:paddingBottom="0dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
                 android:src="@drawable/logo_pantalla"
-                android:visibility="visible" />
-
-            <ImageButton
-                android:id="@+id/btnBack"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:contentDescription="@string/img"
-                android:paddingBottom="20dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingTop="10dp"
-                android:scaleType="fitXY"
                 android:visibility="visible" />
 
         </RelativeLayout>
@@ -89,7 +126,8 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_alignParentBottom="true"
-        android:layout_below="@+id/relativeLayout2">
+        android:layout_below="@+id/relativeLayout2"
+        android:paddingTop="2dp">
 
         <GridView
             android:id="@+id/grid1"
@@ -100,14 +138,14 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:columnWidth="200dp"
             android:gravity="center_vertical|center"
             android:horizontalSpacing="2dp"
             android:numColumns="auto_fit"
             android:stretchMode="columnWidth"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="198dp"
-            android:layout_alignParentTop="true" />
+            tools:layout_editor_absoluteY="198dp" />
 
         <ImageView
             android:id="@+id/fullImage"
@@ -117,19 +155,18 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
+            android:contentDescription="@string/dummy_content"
             android:elevation="24dp"
             android:visibility="invisible"
             app:srcCompat="@drawable/border_last_picture_pressed"
-            tools:ignore="UnusedAttribute"
-            android:contentDescription="@string/dummy_content" />
+            tools:ignore="UnusedAttribute" />
 
     </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/btnAddPhoto"
-        style="@style/Widget.Design.FloatingActionButton"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:id="@+id/btnAddGroup"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -138,10 +175,10 @@
         android:layout_marginRight="12dp"
         android:clickable="true"
         android:padding="0dp"
-        android:scaleType="center"
-        android:src="@android:drawable/ic_menu_search"
-        android:visibility="invisible"
-        app:backgroundTint="@android:color/background_light"
+        android:scaleType="fitCenter"
+        android:src="@drawable/add_white"
+        android:visibility="visible"
+        app:backgroundTint="@color/inpix"
         app:fabSize="normal" />
 
     <android.support.design.widget.TextInputLayout
@@ -150,7 +187,7 @@
         android:layout_alignBottom="@+id/btnAddPhoto"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@android:color/holo_red_light"
+        android:background="@color/inpix"
         android:gravity="center_vertical"
         android:padding="0dp"
         android:visibility="invisible">
@@ -165,6 +202,7 @@
             android:inputType="text"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
+
     </android.support.design.widget.TextInputLayout>
 
 </RelativeLayout>

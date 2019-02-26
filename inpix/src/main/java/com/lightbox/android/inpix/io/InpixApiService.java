@@ -1,5 +1,6 @@
 package com.lightbox.android.inpix.io;
 
+import com.lightbox.android.inpix.io.responses.addEventResponse;
 import com.lightbox.android.inpix.io.responses.eventListResponse;
 import com.lightbox.android.inpix.io.responses.eventResponse;
 import com.lightbox.android.inpix.io.responses.imageResponse;
@@ -73,6 +74,17 @@ public interface InpixApiService {
     Call<eventListResponse> listEvents(
             @Path("page") String page,
             @Path("lan") String lang);
+
+    @Multipart
+    @POST("addEvent")
+    Call<addEventResponse> addEvent(@Part MultipartBody.Part image,
+                                    @Part("eventName") RequestBody eventName,
+                                    @Part("eventTitle") RequestBody eventTitle,
+                                    @Part("eventDescription") RequestBody eventDescription,
+                                    @Part("eventLanguage") RequestBody eventLanguage,
+                                    @Part("eventVisibility") RequestBody eventVisibility,
+                                    @Part("userEmail") RequestBody userEmail,
+                                    @Part("userPassword") RequestBody userPassword);
 
 }
 

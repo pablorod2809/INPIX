@@ -2,14 +2,14 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.0'
+    buildToolsVersion '27.0.3'
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId 'com.ingenios.inpix'
         targetSdkVersion 26
         minSdkVersion 15
-        versionCode 21
-        versionName '2.5.0'
+        versionCode 22
+        versionName '2.6.0'
     }
     buildTypes {
         release {
@@ -24,22 +24,29 @@ android {
 
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.google.android.gms:play-services-plus:15.0.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    compile 'com.android.support:appcompat-v7:26.0.2'
-    compile 'com.android.support:support-v4:26.0.2'
-    compile 'com.android.support:design:26.0.2'
-    compile 'com.android.support:cardview-v7:26.0.2'
-    compile 'com.android.support:gridlayout-v7:26.0.2'
-    compile 'com.github.d-max:spots-dialog:0.7@aar'
-    compile 'com.squareup.retrofit2:retrofit:2.2.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
-    compile 'com.squareup.picasso:picasso:2.71828'
-
-    compile 'info.androidhive:imagefilters:1.0.7'
-    compile 'com.jakewharton:butterknife:8.8.1'
-    compile 'com.karumi:dexter:4.1.0'
-    compile 'com.android.support:recyclerview-v7:26.0.2'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    implementation 'com.android.support:gridlayout-v7:26.1.0'
+    //Loading...
+    implementation 'com.github.d-max:spots-dialog:0.7@aar'
+    //Llamado a servicios web
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    //Lista de imagenes que se cargan de una url
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //Menu Material desing
+    implementation 'com.getbase:floatingactionbutton:1.10.1'
+    //Edicion de imagenes como Instagram
+    implementation 'info.androidhive:imagefilters:1.0.7'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.karumi:dexter:4.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }

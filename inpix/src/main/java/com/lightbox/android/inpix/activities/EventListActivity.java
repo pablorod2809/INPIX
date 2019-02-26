@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
@@ -12,12 +13,14 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AbsListView;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lightbox.android.inpix.CameraApplication;
 import com.lightbox.android.inpix.R;
 import com.lightbox.android.inpix.activities.util.InpixEventAdapter;
+import com.lightbox.android.inpix.events.AddEvent1Activity;
 import com.lightbox.android.inpix.io.InpixApiAdapter;
 import com.lightbox.android.inpix.io.responses.eventListResponse;
 import com.lightbox.android.inpix.io.responses.eventResponse;
@@ -37,7 +40,7 @@ import retrofit2.Response;
 public class EventListActivity extends AppCompatActivity implements View.OnClickListener, Callback<eventListResponse>, AbsListView.OnScrollListener {
 
     private int mainLayout = R.layout.activity_events_img;
-    private Intent intentPresentation;
+    private Intent intentGroup;
     private Intent intentCode;
     private Intent intentMainList;
 
@@ -46,9 +49,10 @@ public class EventListActivity extends AppCompatActivity implements View.OnClick
     private ArrayList<eventResponse> listImages;
     private InpixEventAdapter ipxAdapter;
     private TextView mainTitle;
+    private TextView searchGroup;
 
     private static final String TAG = "INPIX-EventListActivity";
-    private final String BASE = "https://inpix.online/private/";
+    //private final String BASE = "https://inpix.online/private/";
     private int lastPage = 0;
     private boolean mLoading = false;
     private String lang = "EN";
@@ -77,25 +81,29 @@ public class EventListActivity extends AppCompatActivity implements View.OnClick
         mainTitle = (TextView) findViewById(R.id.txtView);
         application.setTypeface(mainTitle);
 
+        //Instancio el cuadro de busqueda
+        searchGroup = (TextView) findViewById(R.id.textSearch);
+        application.setTypeface(searchGroup);
+
         //Listeners de Botones
-
-        //btnClock = (ImageButton) findViewById(R.id.btnClock);
-        //btnClock.setOnClickListener(this);
-
+        FloatingActionButton btnClock = (FloatingActionButton) findViewById(R.id.btnAddGroup);
+        btnClock.setOnClickListener(this);
+        ImageView btnSearch = (ImageView) findViewById(R.id.btnSearch);
+        btnSearch.setOnClickListener(this);
 
         //Preparo la Grilla
         grid = (GridView) findViewById(R.id.grid1);
         listImages = new ArrayList<eventResponse>();
         lang = Locale.getDefault().getLanguage().toUpperCase();
-        ipxAdapter = new InpixEventAdapter(this, new ArrayList<eventResponse>(listImages), lang, BASE);
+        ipxAdapter = new InpixEventAdapter(this, new ArrayList<eventResponse>(listImages), lang, InpixApiAdapter.ImagesUrl);
         grid.setAdapter(ipxAdapter);
         grid.setOnScrollListener(this);
 
         //Seteo Intents
         intentMainList = new Intent(EventListActivity.this, MainListActivity.class);
-        intentCode = new Intent(EventListActivity.this, EventActivity.class);
-        intentPresentation = new Intent(EventListActivity.this, PresentationActivity.class);
-
+        intentCode = new Intent(EventListActivity.this, CodeActivity.class);
+        //intentPresentation = new Intent(EventListActivity.this, PresentationActivity.class);
+        intentGroup = new Intent(EventListActivity.this, AddEvent1Activity.class);
         try{
             Call<eventListResponse> call = InpixApiAdapter.getApiService().listEvents(Integer.toString(lastPage),lang);
             call.enqueue(EventListActivity.this);
@@ -125,6 +133,18 @@ public class EventListActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         int id = view.getId();
         switch (id) {
+            case R.id.btnAddGroup:
+                startActivity(intentGroup);
+                break;
+
+            case R.id.btnSearch:
+                if (searchGroup.getVisibility() == View.VISIBLE){
+                    searchGroup.setVisibility(View.INVISIBLE);
+                }else{
+                    searchGroup.setVisibility(View.VISIBLE);
+                }
+                break;
+
             case R.id.btnBack:
                 try {
                     if (isOnline()) {
