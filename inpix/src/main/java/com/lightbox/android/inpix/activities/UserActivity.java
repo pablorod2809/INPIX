@@ -100,7 +100,7 @@ public class UserActivity extends Activity implements OnClickListener, Callback<
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-					startActivity(intentPhoto);
+					//startActivity(intentPhoto);
 				} else {
 					Toast tst = Toast.makeText(UserActivity.this, R.string.email_invalid, Toast.LENGTH_LONG);
 					tst.setGravity(Gravity.CENTER|Gravity.CENTER,0,0);
@@ -155,6 +155,7 @@ public class UserActivity extends Activity implements OnClickListener, Callback<
 		Log.i(TAG, "onSaveInstanceState");
 	}
 
+	@Deprecated
 	public void setPrefs(String pKey,String pValue) {
 		SharedPreferences pref = getSharedPreferences("mypreferences",Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = pref.edit();
@@ -187,9 +188,17 @@ public class UserActivity extends Activity implements OnClickListener, Callback<
 
 	@Override
 	public void onResponse(Call<userResponse> call, Response<userResponse> response) {
-		userResponse rs = response.body();
-		int user_id = rs.getUserId();
-		this.setPrefs("opUserId", String.valueOf(user_id));
+		if(response.isSuccessful()) {
+			userResponse rs = response.body();
+			int user_id = rs.getUserId();
+			this.setPrefs("opUserId", String.valueOf(user_id));
+			startActivity(intentPhoto);
+		} else{
+			this.setPrefs("opUserId", "0");
+			Toast tst = Toast.makeText(UserActivity.this, getString(R.string.activities_user_new_error), Toast.LENGTH_LONG);
+			tst.setGravity(Gravity.CENTER|Gravity.CENTER,0,0);
+			tst.show();
+		}
 	}
 
 	@Override

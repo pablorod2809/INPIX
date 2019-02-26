@@ -61,17 +61,17 @@
         android:id="@+id/frameLayout">
 
         <Button
-            android:text="@string/entra_al_evento"
             android:id="@+id/button_registercode"
             style="@style/button_textmax.red"
-            android:layout_gravity="right|bottom"
             android:layout_height="63dp"
+            android:layout_gravity="right|bottom"
             android:background="@drawable/btn_round_black"
             android:ellipsize="middle"
-            android:textStyle="bold"
-            android:textSize="24dp"
             android:gravity="left|fill_vertical"
-            android:paddingLeft="20dp" />
+            android:paddingLeft="20dp"
+            android:text="@string/entra_al_evento"
+            android:textSize="24dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"

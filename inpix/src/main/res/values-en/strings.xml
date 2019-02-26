@@ -108,4 +108,10 @@
     <string name="filters">FILTERS</string>
     <string name="filter_normal">Normal</string>
     <string name="edit">EDIT</string>
+    <string name="action_open">OPEN</string>
+    <string name="action_save">SAVE</string>
+    <string name="hello_blank_fragment">Hello</string>
+    <string name="invalid_code">Invalid Code</string>
+    <string name="activities_user_new_error">error on create user</string>
+    <string name="back"><![CDATA[<]]></string>
 </resources>

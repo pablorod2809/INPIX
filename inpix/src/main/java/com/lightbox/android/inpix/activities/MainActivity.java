@@ -25,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lightbox.android.inpix.R;
+import com.lightbox.android.inpix.io.InpixApiAdapter;
 
 public class MainActivity extends Activity implements OnClickListener {
 	//Acciones
@@ -57,7 +58,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 
 		intentPhoto = new Intent(MainActivity.this, Camera.class);
-        intentCode = new Intent(MainActivity.this, EventActivity.class);
+        intentCode = new Intent(MainActivity.this, EventListActivity.class);
 		intentAbout = new Intent(MainActivity.this, AboutActivity.class);
 
         //Declaro objetos de la actividad principal.
@@ -77,7 +78,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		String message = getString(R.string.hello) + " " + getPrefs("opName") + "!";
 		lblMessage.setText(getPrefs("opEvtDesc"));
 		lblWelcome.setText(message);
-        lblYourPictures.setText(getString(R.string.your_pics) + " https://inpix.online/wall?e=" + getPrefs("opCode"));
+        lblYourPictures.setText(getString(R.string.your_pics) + InpixApiAdapter.baseUrl+"wall?e=" + getPrefs("opCode"));
         lblYourPictures.setOnClickListener(this);
 
 	}
@@ -144,7 +145,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		    break;
         case R.id.yourPictures:
             try {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://inpix.online/wall?e=" + getPrefs("opCode")));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(InpixApiAdapter.baseUrl+"/wall?e=" + getPrefs("opCode")));
                 startActivity(browserIntent);
             } catch (Exception e){
                 e.printStackTrace();

@@ -52,11 +52,12 @@
 
     <RelativeLayout
         android:id="@+id/control_bar"
-        android:layout_width="100dip"
+        android:layout_width="80dp"
         android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentTop="true"
+        android:background="@color/inpix">
 
         <FrameLayout
             android:id="@+id/button_bg"
@@ -69,19 +70,22 @@
                 android:id="@+id/shutter_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="0.5dip"
+                android:layout_gravity="center"
+                android:layout_marginBottom="1dip"
+                android:layout_marginLeft="1dp"
                 android:background="@drawable/btn_camera_shoot"
                 android:clickable="true"
                 android:focusable="true"
-                android:scaleType="center"
-                android:layout_marginLeft="8dip"
-                android:layout_gravity="center" />
+                android:scaleType="center" />
 
             <ImageView
                 android:id="@+id/imageViewPreview"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent" android:scaleType="centerCrop" android:padding="1dp" android:visibility="invisible"
-                android:layout_gravity="bottom|left|top" />
+                android:layout_height="fill_parent"
+                android:layout_gravity="bottom|left|top"
+                android:padding="1dp"
+                android:scaleType="centerCrop"
+                android:visibility="invisible" />
         </FrameLayout>
 
         <com.lightbox.android.inpix.RotateImageView
@@ -89,10 +93,11 @@
             android:layout_width="63dp"
             android:layout_height="63dp"
             android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="15dip"
             android:background="@drawable/border_last_picture"
             android:clickable="false"
-            android:focusable="false" android:layout_centerHorizontal="true"
+            android:focusable="false"
             android:visibility="invisible" />
 
         <LinearLayout
@@ -102,9 +107,9 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_marginBottom="8dip"
-            android:layout_marginRight="24dip"
-            android:background="@drawable/camera_functions_bg"
-            android:orientation="vertical" >
+            android:layout_marginRight="20dip"
+            android:background="@color/inpix"
+            android:orientation="vertical">
 
             <com.lightbox.android.inpix.RotateImageView
                 android:id="@+id/btn_flash"

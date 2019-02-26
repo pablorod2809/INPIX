@@ -27,7 +27,7 @@
             android:layout_alignParentTop="true"
             android:alpha="0.5"
             android:scaleType="centerCrop"
-            android:src="@drawable/foto_fiesta" />
+            android:src="@drawable/forest" />
 
         <ImageView
             android:id="@+id/logoEvent"

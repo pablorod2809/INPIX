@@ -9,16 +9,10 @@ import android.util.Log;
 import com.lightbox.android.inpix.io.InpixApiAdapter;
 import com.lightbox.android.inpix.io.responses.imageResponse;
 
-import org.apache.http.impl.client.DefaultHttpClient;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -70,7 +64,7 @@ public class WSManager implements Callback<imageResponse> {
         String myUserEmail = pref.getString("opEmail", "Sin Email");
         String fileName    = "IMG_" + System.currentTimeMillis() + ".png";
 
-        File file = inputStreamToFile(in, fileName);
+        File file = MyFiles.inputStreamToFile(in, fileName, this.context);
 
         RequestBody reqFile = RequestBody.create(MediaType.parse("image/*"),file);
         MultipartBody.Part body = MultipartBody.Part.createFormData("file", file.getName(), reqFile);
@@ -84,7 +78,6 @@ public class WSManager implements Callback<imageResponse> {
 
     }
 
-
     @Override
     public void onResponse(Call<imageResponse> call, Response<imageResponse> response) {
 
@@ -95,33 +88,4 @@ public class WSManager implements Callback<imageResponse> {
 
     }
 
-    public File inputStreamToFile(InputStream input, String fileName ) {
-        File file = new File(this.context.getCacheDir(), fileName);
-        try {
-            OutputStream output = new FileOutputStream(file);
-            try {
-                byte[] buffer = new byte[4 * 1024]; // or other buffer size
-                int read;
-
-                while ((read = input.read(buffer)) != -1) {
-                    output.write(buffer, 0, read);
-                }
-
-                output.flush();
-            } finally {
-                output.close();
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                input.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return file;
-    }
 }

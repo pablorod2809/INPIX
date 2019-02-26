@@ -98,6 +98,7 @@
     <string name="last_pics">Lastest</string>
     <string name="my_pics">Mine</string>
     <string name="ranking">Rank</string>
+    <string name="back"><![CDATA[<]]></string>
     <string name="vote_or_share">"Share or vote images about "</string>
     <string name="activities_main_no_connect">Internet connection failed, please check to upload your image</string>
     <string name="our_life_in_pictures">Our life in pictures</string>
@@ -115,4 +116,6 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="invalid_code">Invalid Code</string>
+    <string name="activities_user_new_error">error on create user</string>
 </resources>

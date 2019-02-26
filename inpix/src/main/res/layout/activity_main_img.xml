@@ -20,7 +20,7 @@
     <RelativeLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:layout_alignParentLeft="false"
         android:layout_alignParentStart="false"
         android:background="@color/black_overlay"
@@ -33,22 +33,23 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
-            android:background="@android:color/holo_red_light"
+            android:background="@color/inpix"
             tools:ignore="UselessParent">
 
             <TextView
                 android:id="@+id/txtView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imgLogo"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/imgLogo"
-                android:layout_toStartOf="@+id/lblMainTitle"
-                android:gravity="center"
-                android:paddingLeft="10dp"
+                android:layout_alignTop="@+id/imgLogo"
+                android:layout_toEndOf="@+id/imgLogo"
+                android:layout_toRightOf="@+id/imgLogo"
+                android:gravity="right|center_vertical"
+                android:paddingBottom="3dp"
                 android:paddingRight="10dp"
+                android:paddingTop="3dp"
                 android:text="@string/vote_or_share"
                 android:textColor="@android:color/background_light"
                 android:textSize="16sp"
@@ -57,26 +58,33 @@
             <ImageView
                 android:id="@+id/imgLogo"
                 style="@style/Base.Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_width="75dp"
+                android:layout_height="35dp"
+                android:layout_alignParentBottom="true"
                 android:layout_alignParentTop="true"
-                android:layout_gravity="center_vertical|center_horizontal|center"
+                android:layout_gravity="left|center_vertical"
+                android:layout_toEndOf="@+id/btnBack"
+                android:layout_toRightOf="@+id/btnBack"
                 android:contentDescription="@string/img"
-                android:padding="8dp"
-                android:paddingBottom="5dp"
+                android:foregroundGravity="left"
+                android:paddingBottom="3dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="3dp"
                 android:src="@drawable/logo_pantalla"
                 android:visibility="visible" />
 
             <ImageButton
                 android:id="@+id/btnBack"
                 style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
                 android:contentDescription="@string/img"
-                android:paddingBottom="20dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingTop="10dp"
+                android:paddingBottom="15dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="15dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/btn_back_w"
                 android:visibility="visible" />
@@ -85,12 +93,46 @@
 
     </RelativeLayout>
 
+    <android.support.design.widget.TabLayout
+        android:id="@+id/mainActivity_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relativeLayout2"
+        android:background="@android:color/white"
+        android:elevation="0dp"
+        app:tabIndicatorColor="@color/inpix"
+        app:tabSelectedTextColor="@color/inpix"
+        app:tabTextColor="@android:color/darker_gray">
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/btnRanking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ranking" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/btnClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/last_pics" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/btnOwns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_pics" />
+
+    </android.support.design.widget.TabLayout>
+
     <RelativeLayout
         android:id="@+id/relativeLayout5"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_alignParentBottom="true"
-        android:layout_below="@+id/relativeLayout2">
+        android:layout_below="@+id/mainActivity_tabs"
+        android:paddingTop="1dp">
 
         <GridView
             android:id="@+id/grid1"
@@ -101,14 +143,14 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:columnWidth="200dp"
             android:gravity="center_vertical|center"
             android:horizontalSpacing="2dp"
             android:numColumns="auto_fit"
             android:stretchMode="columnWidth"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="198dp"
-            android:layout_alignParentTop="true" />
+            tools:layout_editor_absoluteY="198dp" />
 
         <ImageView
             android:id="@+id/fullImage"
@@ -118,119 +160,31 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
+            android:contentDescription="@string/dummy_content"
             android:elevation="24dp"
             android:visibility="invisible"
             app:srcCompat="@drawable/border_last_picture_pressed"
-            tools:ignore="UnusedAttribute"
-            android:contentDescription="@string/dummy_content" />
+            tools:ignore="UnusedAttribute" />
 
     </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btnAddPhoto"
         style="@style/Widget.Design.FloatingActionButton"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="12dp"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
         android:clickable="true"
+        android:elevation="0dp"
         android:padding="20dp"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_launcher_quickcam_inverse"
-        app:backgroundTint="@android:color/holo_red_light"
+        app:backgroundTint="@color/inpix"
         app:fabSize="normal" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/btnOwns"
-        style="@style/Widget.Design.FloatingActionButton"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_alignTop="@+id/btnClock"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_toEndOf="@+id/btnClock"
-        android:layout_toRightOf="@+id/btnClock"
-        android:clickable="true"
-        android:padding="15dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/user_grey"
-        app:backgroundTint="@android:color/white"
-        app:fabSize="normal" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/btnClock"
-        style="@style/Widget.Design.FloatingActionButton"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_alignTop="@+id/btnRanking"
-        android:layout_centerHorizontal="true"
-        android:clickable="true"
-        android:padding="15dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/clock_grey"
-        app:backgroundTint="@android:color/white"
-        app:fabSize="normal" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/btnRanking"
-        style="@style/Widget.Design.FloatingActionButton"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="14dp"
-        android:layout_marginTop="73dp"
-        android:padding="15dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/rank_red"
-        app:backgroundTint="@android:color/white"
-        app:fabSize="normal"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/btnClock"
-        android:layout_toStartOf="@+id/btnClock" />
-
-    <TextView
-        android:id="@+id/twMine"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:gravity="top|center_horizontal"
-        android:text="@string/my_pics"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold"
-        android:layout_below="@+id/btnOwns"
-        android:layout_alignLeft="@+id/btnOwns"
-        android:layout_alignStart="@+id/btnOwns"
-        android:layout_alignRight="@+id/btnOwns"
-        android:layout_alignEnd="@+id/btnOwns" />
-
-    <TextView
-        android:id="@+id/twLast"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:gravity="top|center_horizontal"
-        android:text="@string/last_pics"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold"
-        android:layout_below="@+id/btnClock"
-        android:layout_toRightOf="@+id/btnRanking"
-        android:layout_toLeftOf="@+id/btnOwns"
-        android:layout_toStartOf="@+id/btnOwns" />
-
-    <TextView
-        android:id="@+id/twRank"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:gravity="top|center_horizontal"
-        android:text="@string/ranking"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold"
-        android:layout_below="@+id/btnRanking"
-        android:layout_alignLeft="@+id/btnRanking"
-        android:layout_alignStart="@+id/btnRanking"
-        android:layout_alignRight="@+id/btnRanking"
-        android:layout_alignEnd="@+id/btnRanking" />
 
 </RelativeLayout>

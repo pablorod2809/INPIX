@@ -11,6 +11,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class InpixApiAdapter {
 
+    public static String baseUrl = "https://inpix.online/app_inpix/";
+    public static String APIUrl = baseUrl + "api/public/index.php/";
+    public static String ImagesUrl = baseUrl + "private/";
+
     private static InpixApiService API_SERVICE;
 
     public static InpixApiService getApiService() {
@@ -23,11 +27,11 @@ public class InpixApiAdapter {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(logging);
 
-        String baseUrl = "https://inpix.online/api2/public/index.php/";
+        //String baseUrl = "https://inpix.online/api2/public/index.php/";
 
         if (API_SERVICE == null) {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(baseUrl)
+                    .baseUrl(InpixApiAdapter.APIUrl)
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(httpClient.build()) // <-- usamos el log level
                     .build();

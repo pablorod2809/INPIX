@@ -17,13 +17,20 @@
 package com.lightbox.android.inpix;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.provider.MediaStore.Images;
 import android.provider.MediaStore.Video;
 import android.util.Log;
 
+import java.io.File;
 import java.io.FileDescriptor;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.WeakHashMap;
 
 /**
@@ -128,4 +135,5 @@ public class BitmapManager {
         }
         return sManager;
     }
+
 }
